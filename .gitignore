@@ -1,7 +1,7 @@
-bag/*
 .vscode
 __pycache__/
 dataset/*
 models/*
 config/saved_configs/
 experiments/*
+wandb/*
