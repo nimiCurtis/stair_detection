@@ -8,7 +8,6 @@ from ultralytics import YOLO, settings
 import torch
 torch.cuda.empty_cache()
 
-
 @hydra.main( version_base=None ,config_path="../../config/", config_name = "stair_detection")
 def main(cfg:DictConfig):
 
