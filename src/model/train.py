@@ -26,7 +26,8 @@ def main(cfg:DictConfig):
     model = YOLO(**model_cfg) 
     
     # Train the model using the train config and the data file path
-    model.train(data=data,**train_cfg) 
+    model.train(data=data,
+                **train_cfg) 
     
     # change name of weights file
     experiment_dir = os.path.join(train_cfg["project"],

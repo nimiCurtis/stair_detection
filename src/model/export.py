@@ -18,7 +18,7 @@ def main(args):
         
     # Export the model using the provided arguments
     model.export(format=args.format,
-                 imgsz=imgsz,
+                 imgsz=[imgsz,imgsz],
                  half=args.half,
                  int8=args.int8,
                  dynamic=args.dynamic,

@@ -16,16 +16,18 @@ data:
 # train configuration
 train:
   epochs: 200 # number of epochs to train for
-  patience: 100 # epochs to wait for no observable improvement for early stopping of training
-  batch: 24 # number of images per batch (-1 for AutoBatch)
-  imgsz: 320 # size of input images as integer
+  patience: 80 # epochs to wait for no observable improvement for early stopping of training
+  batch: 64 # number of images per batch (-1 for AutoBatch)
+  imgsz: 
+  - 320 # size of input images as integer
+  - 320
   save: True # save train checkpoints and predict results
   device: cuda # device to run on, i.e. cuda device=0 or device=0,1,2,3 or device=cpu
   pretrained: True # (bool or str) whether to use a pretrained model (bool) or a model to load weights from (str)
   amp: False # Automatic Mixed Precision (AMP) training, choices=[True, False]
   close_mosaic: 100 # (int) disable mosaic augmentation for final epochs (0 to disable)
   project: experiments_${data.project} # project name
-  name: ${data.model}_${data.version}_imgsz${train.imgsz}_${now:%Y-%m-%d}_${now:%H-%M-%S} # experiment name
+  name: ${data.model}_${data.version}_imgsz${train.imgsz[0]}_${now:%Y-%m-%d}_${now:%H-%M-%S} # experiment name
 
   save_period: -1 # Save checkpoint every x epochs (disabled if < 1)
   cache: False # True/ram, disk or False. Use cache for data loading
