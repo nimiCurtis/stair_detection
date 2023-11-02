@@ -5,7 +5,6 @@ import torch
 
 def main(args):
 
-
     device = 'cuda' if args.gpu and torch.cuda.is_available() else 'cpu'
     model = YOLO(args.model).to(device)  # load the specified model
     
@@ -18,11 +17,11 @@ def main(args):
         
     # Export the model using the provided arguments
     model.export(format=args.format,
-                 imgsz=[imgsz,imgsz],
-                 half=args.half,
-                 int8=args.int8,
-                 dynamic=args.dynamic,
-                 simplify=args.simplify)
+                imgsz=[imgsz,imgsz],
+                half=args.half,
+                int8=args.int8,
+                dynamic=args.dynamic,
+                simplify=args.simplify)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Export a PyTorch YOLO model to other formats.")
