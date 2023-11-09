@@ -6,3 +6,4 @@ experiments/*
 wandb/*
 experiments_single_stair_detection/*
 .vscode/
+bags/

@@ -10,7 +10,7 @@ model:
 data: 
   root: datasets
   project: single_stair_detection
-  version: v6i
+  version: v7i
   model: yolov8
 
 # train configuration
@@ -25,7 +25,7 @@ train:
   device: cuda # device to run on, i.e. cuda device=0 or device=0,1,2,3 or device=cpu
   pretrained: True # (bool or str) whether to use a pretrained model (bool) or a model to load weights from (str)
   amp: False # Automatic Mixed Precision (AMP) training, choices=[True, False]
-  close_mosaic: 100 # (int) disable mosaic augmentation for final epochs (0 to disable)
+  close_mosaic: 80 # (int) disable mosaic augmentation for final epochs (0 to disable)
   project: experiments_${data.project} # project name
   name: ${data.model}_${data.version}_imgsz${train.imgsz[0]}_${now:%Y-%m-%d}_${now:%H-%M-%S} # experiment name
 
