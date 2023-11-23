@@ -8,14 +8,14 @@ model:
   task: detect
 
 data: 
-  root: datasets
-  project: single_stair_detection
-  version: v7i
-  model: yolov8
+  root: datasets                    # dataset folder
+  project: single_stair_detection   # project name
+  version: v8i                      # dataset model
+  model: yolov8                     # model type
 
 # train configuration
 train:
-  epochs: 200 # number of epochs to train for
+  epochs: 250 # number of epochs to train for
   patience: 80 # epochs to wait for no observable improvement for early stopping of training
   batch: 64 # number of images per batch (-1 for AutoBatch)
   imgsz: 
