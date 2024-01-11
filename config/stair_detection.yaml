@@ -8,6 +8,7 @@ model:
   task: detect
 
 data: 
+<<<<<<< HEAD
   root: datasets
   project: room_test
   version: v1i
@@ -16,6 +17,16 @@ data:
 # train configuration
 train:
   epochs: 100 # number of epochs to train for
+=======
+  root: datasets                    # dataset folder
+  project: lab_test   # project name
+  version: v1i                      # dataset model
+  model: yolov8                     # model type
+
+# train configuration
+train:
+  epochs: 150 # number of epochs to train for
+>>>>>>> e62ef14366917a3cf85b01d4ea78824702e511c1
   patience: 80 # epochs to wait for no observable improvement for early stopping of training
   batch: 64 # number of images per batch (-1 for AutoBatch)
   imgsz: 
@@ -25,7 +36,11 @@ train:
   device: cuda # device to run on, i.e. cuda device=0 or device=0,1,2,3 or device=cpu
   pretrained: True # (bool or str) whether to use a pretrained model (bool) or a model to load weights from (str)
   amp: False # Automatic Mixed Precision (AMP) training, choices=[True, False]
+<<<<<<< HEAD
   close_mosaic: 25 # (int) disable mosaic augmentation for final epochs (0 to disable)
+=======
+  close_mosaic: 50 # (int) disable mosaic augmentation for final epochs (0 to disable)
+>>>>>>> e62ef14366917a3cf85b01d4ea78824702e511c1
   project: experiments_${data.project} # project name
   name: ${data.model}_${data.version}_imgsz${train.imgsz[0]}_${now:%Y-%m-%d}_${now:%H-%M-%S} # experiment name
 
